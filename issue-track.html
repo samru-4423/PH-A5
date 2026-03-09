@@ -30,30 +30,30 @@
 
 <body class="bg-base-300 h-auto pb-7">
     <main>
-        <header class="bg-white w-full flex justify-between px-20 py-3">
+        <header class="bg-white w-full flex justify-between px-3 md:px-20 py-3">
             <div class="flex items-center gap-1">
                 <img src="assets/github-logo.png" alt="" class="w-10">
-                <h2 class="text-[30px] font-semibold">GitHub Issues Tracker</h2>
+                <h2 class="text-[15px] md:text-[30px] font-semibold">GitHub Issues Tracker</h2>
             </div>
             <div class="flex items-center  ">
-                <div>
-                    <i class="fa-brands fa-sistrix -mr-9"></i>
-                    <input type="text" placeholder="Search issues..."
-                        class="w-full h-[40px] border-gray-300 border-1 pl-9 pr-2 mt-1 mb-1 rounded-sm ">
+                <div class="flex items-center">
+                    <!-- <i class="fa-brands fa-sistrix "></i> -->
+                    <input id="searchInput" type="text" placeholder="Search issues..."
+                        class="input w-[90px] md:w-full h-[40px] border-gray-300 border-1 md:pl-9 pr-2 mt-1 mb-1 rounded-sm">
+                        
                 </div>
                 <div class="flex items-center">
-                    <button class="btn bg-blue-500 text-white font-light"><span class="text-[20px] ">&#43</span>New
-                        Issue</button>
+                    <button id="searchBtn" class="btn bg-blue-500 text-white font-light"><i class="fa-brands fa-sistrix"></i>Search</button>
                 </div>
             </div>
 
         </header>
 
-        <section class="w-[70%] mx-auto mt-15">
+        <section class="w-[100%] md:w-[70%] mx-auto mt-15">
             <div class=" bg-white p-4 space-x-1 mb-5 rounded-md">
-                <button id="all-btn" onclick="filterIssues('all')" class="btn w-[8%] h-[32px] bg-blue-600 text-white font-normal">All</button>
-                <button id="open-btn" onclick="filterIssues('open')" class="btn w-[8%] h-[32px] bg-white font-normal">Open</button>
-                <button id="closed-btn" onclick="filterIssues('closed')" class="btn w-[8%] h-[32px] bg-white font-normal">Closed</button>
+                <button id="all-btn" onclick="filterIssues('all')" class="btn w-[14%] md:w-[8%] h-[32px] bg-blue-700 text-white font-normal">All</button>
+                <button id="open-btn" onclick="filterIssues('open')" class="btn w-[14%] md:w-[8%] h-[32px] bg-base-200 text-black font-normal">Open</button>
+                <button id="closed-btn" onclick="filterIssues('closed')" class="btn w-[14%] md:w-[8%] h-[32px] bg-base-200 text-black font-normal">Closed</button>
             </div>
 
             <div class=" bg-white p-4 rounded-t-md">
@@ -63,8 +63,8 @@
                             <img src="assets/Aperture.png" alt="" class="bg-slate-200 p-2 rounded-full">
                         </div>
                         <div>
-                            <p id="total" class="font-semibold">50 Issues</p>
-                            <p class="text-gray-400 text-[13px]">Track and manage your project issues</p>
+                            <p id="totalIssue" class="font-semibold">0 Issues</p>
+                            <p class="text-gray-400 text-[11px] md:text-[13px]">Track and manage your project issues</p>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
             </div>
             <hr class="border-1 border-gray-200">
 
-            <div id="issues-container" class="grid grid-cols-4 w-full bg-base-200 gap-2 p-5 rounded-b-md">
+            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-4 w-full bg-base-200 gap-2 p-1 md:p-5 rounded-b-md">
                 <!-- <div class="w-full bg-white p-3 rounded-md">
                     <div class="flex justify-between items-center mb-2">
                         <img src="assets/Open-Status.png" alt="" class="w-5 h-5">
@@ -100,15 +100,15 @@
 
         <dialog id="modalId" class="modal modal-bottom sm:modal-middle">
             <div class="modalBox">
-                <div id="details-card" class="">
+                <div id="detailsCard" class="">
                     <div class="">
 
-                    </div>\
+                    </div>
                 </div>
 
                 <div class="modal-action">
                     <form method="dialog">
-\                       <button class="btn bg-purple-900">Close</button>
+                       <button class="btn bg-purple-900 -mt-30 mr-20 md:-mt-40 md:mr-50 text-white">Close</button>
                     </form>
                 </div>
             </div>
