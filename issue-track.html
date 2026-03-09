@@ -51,9 +51,9 @@
 
         <section class="w-[70%] mx-auto mt-15">
             <div class=" bg-white p-4 space-x-1 mb-5 rounded-md">
-                <button id="all-btn" onclick="" class="btn w-[8%] h-[32px] bg-white font-normal">All</button>
-                <button id="open-btn" onclick="" class="btn w-[8%] h-[32px] bg-white font-normal">Open</button>
-                <button id="close-btn" onclick="" class="btn w-[8%] h-[32px] bg-white font-normal">Closed</button>
+                <button id="all-btn" onclick="filterIssues('all')" class="btn w-[8%] h-[32px] bg-blue-600 text-white font-normal">All</button>
+                <button id="open-btn" onclick="filterIssues('open')" class="btn w-[8%] h-[32px] bg-white font-normal">Open</button>
+                <button id="closed-btn" onclick="filterIssues('closed')" class="btn w-[8%] h-[32px] bg-white font-normal">Closed</button>
             </div>
 
             <div class=" bg-white p-4 rounded-t-md">
@@ -63,7 +63,7 @@
                             <img src="assets/Aperture.png" alt="" class="bg-slate-200 p-2 rounded-full">
                         </div>
                         <div>
-                            <p class="font-semibold">50 Issues</p>
+                            <p id="total" class="font-semibold">50 Issues</p>
                             <p class="text-gray-400 text-[13px]">Track and manage your project issues</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <p>Closed</p>
                     </div>
                 </div>
-                
+
             </div>
             <hr class="border-1 border-gray-200">
 
@@ -97,6 +97,27 @@
                 </div> -->
             </div>
         </section>
+
+        <dialog id="modalId" class="modal modal-bottom sm:modal-middle">
+            <div class="modalBox">
+                <div id="details-card" class="">
+                    <div class="">
+
+                    </div>\
+                </div>
+
+                <div class="modal-action">
+                    <form method="dialog">
+\                       <button class="btn bg-purple-900">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- <section id="singleIssue-container" class="bg-gray-100 p-10 w-11/12 mx-auto my-10">
+
+        </section> -->
+
     </main>
 
     <script src="scripts/issue-track.js"></script>
